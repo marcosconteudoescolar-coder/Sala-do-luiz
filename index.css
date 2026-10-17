@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Cores e fonte da marca: altere aqui. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-canvas: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-ink: #172033;
+  --color-muted: #687386;
+  --color-primary: #2457d6;
+  --color-success: #16805d;
+  --color-warning: #b86b12;
+  --color-line: #e3e6ec;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
